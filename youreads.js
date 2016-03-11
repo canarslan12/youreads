@@ -71,7 +71,7 @@ jQuery(document).ready(function(){
 	function bugun_linki(){
 		$('.SolListe .fa').each(function( index ) {
 			if($(this).parent())
-				$(this).parent().html($(this).parent().html().replace('?go=gundem', '?go=bugun'))
+				$(this).parent()[0].href+='&go=bugun';
 				//$(this).parent().append('<span style="z-index: 999999999;background: #efefef;padding: 0 6px;font-weight: 700;color: #000;vertical-align: middle;float: right;border-radius: 5px;" onclick="document.location.href=\'/baslik/sdf--fds?go=bugun\'">&gt;</span>')
 		})
 	}
