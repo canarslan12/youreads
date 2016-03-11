@@ -1,0 +1,17 @@
+{
+   "author": "CanArslan12",
+   "content_scripts": [ {
+      "js": [  "jquery.min.js","youreads.js" ],
+      "matches": [ "*://youreads.net/*" ]
+   } ,{
+      "js": [  "jquery.min.js","ayarlar.js" ],
+      "matches": [ "*://youreads.net/ayarlar*" ]
+   } ],
+   "name": "YouReads++",
+   "description": "YouReads.net için özellikler eklemeye yarar",
+   "icons": {
+      "128": "icon.png"
+   },
+   "manifest_version": 2,
+   "version": "0.4"
+}
