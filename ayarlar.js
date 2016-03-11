@@ -23,8 +23,8 @@ jQuery(document).ready(function(){
 	ad+='<div class="spacer"></div><input type="button" id="ayarla" value="Ayarla" class="butonB"></form></div>';
 	$('#a5').append(ad);
 	
-	hepsi = ["spoiler", "yildizli","kisi","sag_kapa","yazi_buyut","facebook","gece_modu","bugun_linki"];
-	isimler = ["spoiler gözükmesin", "yıldızlı bkz.lar otomatik açılsın","sol frame'de yazar/yönetmen/şarkıcı daha küçük olsun","sağ taraftaki öneri panelini kapansın","yazılar biraz büyüsün","alttaki facebook şeyi yok olsun","gece modu hep açık kalsın","sol frame'deki linkler bugün girilen yorumları açsın"];
+	hepsi = ["spoiler", "yildizli","kisi","sag_kapa","yazi_buyut","facebook","gece_modu","bugun_linki","ctrl"];
+	isimler = ["spoiler gözükmesin", "yıldızlı bkz.lar otomatik açılsın","sol frame'de yazar/yönetmen/şarkıcı daha küçük olsun","sağ taraftaki öneri panelini kapansın","yazılar biraz büyüsün","alttaki facebook şeyi yok olsun","gece modu hep açık kalsın","sol frame'deki linkler bugün girilen yorumları açsın","ctrl+enter ile yorum gönderme"];
 	var ekle="<hr><div><label for=eklenti>eklenti ayarları</label><a onclick='$(this).next().children().children().click()'>Tümüne tıkla</a><form>";
 	for	(a = 0; a < hepsi.length; a++) {
 		ekle+='<p><input type="checkbox" id="ayarlar" name="'+hepsi[a]+'"';

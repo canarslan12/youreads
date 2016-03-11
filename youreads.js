@@ -97,6 +97,7 @@ jQuery(document).ready(function(){
 	*/
 	if(ayarlar['yildizli'])
 		$('a:contains("*")').each(function( index ) {$( this ).text("(*"+$( this ).attr("title")+")");})
+	if(ayarlar['ctrl']) $('#entrytxt').keydown(function(e) {if( e.which==13 && e.ctrlKey) $('#bpost').click();});
 	if(ayarlar['yazi_buyut'])
 		$('article').css('font-size','101%')
 	try{
