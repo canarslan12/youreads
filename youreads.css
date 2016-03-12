@@ -1,7 +1,7 @@
 .hider{display:none}
-.block{margin-top: -37px;position: absolute;border-bottom: 1px solid #dadada;color: #626262;padding: 8px 2px 8px 15px;left: 220px;}
+.block{height: 100%;position: absolute;border-bottom: 1px solid #dadada;color: #626262;padding: 8px 2px 8px 15px;left: 220px;}
 .block:hover{cursor:pointer;background:rgba(200,200,200,0.25);color:#000;text-decoration:none;transition:background .1s color .1s;}
-ul.SolListe li{margin-right:25px;}
 #title-search{padding: 5px 10px;background: #721524;border: 0;color: #FFF;cursor: pointer;font-size: 11px;height: 30px;margin-left: -6px;outline: none;position: relative;text-align: center;text-shadow: 1px 1px 1px #000;text-transform: uppercase;vertical-align: top;width: 30px;display: inline-block;}
 .logo_1{cursor:pointer;color: #721524;background-size: cover;float: left;margin-top: 7px;margin-left: 178px;font-size: 40px;}
 .logo_2{cursor:pointer;color: #721524;background-size: cover;margin-top: -29px;margin-left: 18px;font-size: 50%;}
+.tab li{border-radius: 8px 8px 0 0!important;}

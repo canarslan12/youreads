@@ -1,5 +1,26 @@
-
+if(document.getElementsByTagName('link')[6].href=="http://youreads-34d8.kxcdn.com/css/darktheme.css")
+	ayarlar["gece_modu"]=1;
+if(ayarlar['gece_modu'])
+	css.innerHTML+=".logo_1{color:#E2CB7A!important;}.logo_2{color:#E2CB7A!important;}.block{border-bottom: 1px solid #000000!important;} .block:hover {background: rgba(23, 23, 23, 1)!important; color: inherit!important;}";
+if(ayarlar['gece_modu'])
+{
+	var link  = document.createElement('link');
+	link.rel  = 'stylesheet';
+	link.type = 'text/css';
+	link.href = 'http://youreads-34d8.kxcdn.com/css/darktheme.css';
+	link.media = 'screen';
+	(document.head||document.documentElement).appendChild(link);
+}
 jQuery(document).ready(function(){
+	if(ayarlar['gece_modu'])
+	{
+		var link  = document.createElement('link');
+		link.rel  = 'stylesheet';
+		link.type = 'text/css';
+		link.href = 'http://youreads-34d8.kxcdn.com/css/darktheme.css';
+		link.media = 'screen';
+		(document.head||document.documentElement).appendChild(link);
+	}
 	//google arama butonu
 	var node = document.createElement("li");
 	node.innerHTML='<a style="color:grey;" class="fa fa-google" target="_blank" title="başlığı google\'da ara" href="https://www.google.com.tr/search?q='+document.title.replace(' - youreads','')+'"></a>';
@@ -57,30 +78,31 @@ jQuery(document).ready(function(){
 				showThem();
 			});
 			removeThem();
-			if(ayarlar['kisi'])
-				yazar_kucult();
-			if(ayarlar['bugun_linki'])
-				bugun_linki();
-			$('.SolListe li').append('<p class="block"><i class="fa fa-times"></i></p>');
-			$('.block').bind("click",function(){
-				var re = /--(\d+)\?/;
-				var m;
-				if ((m = re.exec($(this).prev().attr('href'))) !== null)
-				{
-					if (m.index === re.lastIndex) {
-						re.lastIndex++;
-					}
-					engelli_basliklar[m[1]]=1;
-					localStorage["engelli_basliklar"]=JSON.stringify(engelli_basliklar);
-				}
-				$(this).parent().hide();
-			});
+			if(ayarlar['kisi'])	yazar_kucult();
+			if(ayarlar['bugun_linki']) bugun_linki();
+			if(ayarlar['carpi']) baslik_engelleme();
 		}
 	}
 	function yazar_kucult(){
 		$('.SolListe .fa').each(function( index ) {
 			$(this).parent().html($(this).parent().html().replace(/i>(.*) - (.*)<span/g, 'i>$1 <span style="font-size:75%;">$2</span><span'))
 		})
+	}
+	function baslik_engelleme(){
+		$('.SolListe li').prepend('<p class="block"><i class="fa fa-times"></i></p>');
+		$('.block').bind("click",function(){
+			var re = /--(\d+)\?/;
+			var m;
+			if ((m = re.exec($(this).prev().attr('href'))) !== null)
+			{
+				if (m.index === re.lastIndex) {
+					re.lastIndex++;
+				}
+				engelli_basliklar[m[1]]=1;
+				localStorage["engelli_basliklar"]=JSON.stringify(engelli_basliklar);
+			}
+			$(this).parent().hide();
+		});
 	}
 	function bugun_linki(){
 		$('.SolListe .fa').each(function( index ) {
@@ -117,9 +139,10 @@ jQuery(document).ready(function(){
 	if(ayarlar['yildizli'])
 		$('a:contains("*")').each(function( index ) {$( this ).text("(*"+$( this ).attr("title")+")");})
 	if(ayarlar['ctrl']) $('#entrytxt').keydown(function(e) {if( e.which==13 && e.ctrlKey) $('#bpost').click();});
-	if(ayarlar['newnumber']) $('.newnumber').remove();
-	if(ayarlar['yazi_buyut'])
+	if(ayarlar['yazi_buyut']){
+		$('ul.SolListe li a').css('font-size','101%')
 		$('article').css('font-size','101%')
+	}
 	if(ayarlar['edit_tarih'])
 	{
 		$('.edittime').each(function( index ) {

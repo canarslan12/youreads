@@ -7,8 +7,7 @@
       "run_at": "document_start"
    } , {
       "js": [  "youreads_after.js" ],
-      "matches": [ "*://youreads.net/*" ],
-      "run_at": "document_end"
+      "matches": [ "*://youreads.net/*" ]
    } ,{
       "js": [  "jquery.min.js","ayarlar.js" ],
       "matches": [ "*://youreads.net/ayarlar*" ]
@@ -19,5 +18,5 @@
       "128": "icon.png"
    },
    "manifest_version": 2,
-   "version": "0.7"
+   "version": "0.9.1"
 }
