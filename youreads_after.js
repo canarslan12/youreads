@@ -93,20 +93,23 @@ jQuery(document).ready(function(){
 		$('.block').bind("click",function(){
 			var re = /--(\d+)\?/;
 			var m;
-			if ((m = re.exec($(this).prev().attr('href'))) !== null)
+			if ((m = re.exec($(this).next().attr('href'))) !== null)
 			{
 				if (m.index === re.lastIndex) {
 					re.lastIndex++;
 				}
 				engelli_basliklar[m[1]]=1;
 				localStorage["engelli_basliklar"]=JSON.stringify(engelli_basliklar);
+				
 			}
 			$(this).parent().hide();
 		});
 	}
 	function bugun_linki(){
 		$('.SolListe .fa').each(function( index ) {
-			$(this).parent()[0].href+='&go=bugun';
+			t=$(this).parent()[0];
+			t.href=t.href.replace('gundem','bugun');
+			//$(this).parent()[0].href+='&go=bugun';
 		})
 	}
 	if(ayarlar['spoiler'])

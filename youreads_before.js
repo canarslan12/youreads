@@ -62,7 +62,9 @@ if(ayarlar['sag_kapa'])
 if(ayarlar['facebook'])	css.innerHTML+=".fb-like{display:none!important}";
 if(ayarlar['newnumber']) css.innerHTML+=".newnumber{display:none!important}";
 if(ayarlar['carpi']) css.innerHTML+="ul.SolListe li{margin-right:25px;}";
-if(ayarlar['yuvarlak_hatlar']) css.innerHTML+=".boxcontainer{border-radius: 1em;}";
+//if(ayarlar['yuvarlak_hatlar']) css.innerHTML+=".boxcontainer{border-radius: 1em;}";
+if(ayarlar['toTop']) css.innerHTML+="#toTop{display:none!important}";
+if(ayarlar['yazi_buyut']) css.innerHTML+="html{font-size:101%!important}";
 if(ayarlar['gece_modu'])
 	css.innerHTML+="body {background: #3D3D3D!important;  color: #C8C8C8!important;}nav{background: rgb(45, 45, 45)!important;}.boxcontainer{background: #2D2D2D!important;  border: 1px solid #222222!important; box-shadow: 0 3px 3px 1px #222222!important;}";
 if(ayarlar['gece_modu'])
